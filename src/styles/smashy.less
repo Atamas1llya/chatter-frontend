@@ -1,6 +1,6 @@
 // smashy theme based on Bootswatch Cosmo theme
 
-@theme-black: rgba(0,0,0,.8);
+@theme-black: #353535;
 @theme-white: white;
 
 .control-label {
@@ -20,5 +20,49 @@
 
     background: @theme-black;
     color: @theme-white;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus, &:active, &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+
+// buttons
+
+.btn {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-decoration: none;
+
+  &:focus, &:active, &:hover {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    text-decoration: none;
+  }
+
+  &.btn-primary {
+    background: @theme-black;
+    font-size: 20px;
+    font-weight: 400;
+
+    border: 2px solid @theme-black;
+
+    &:hover {
+      border: 2px solid @theme-black;
+      color: @theme-black;
+    }
+  }
+
+  &.btn-link {
+    color: inherit;
   }
 }

@@ -5,6 +5,8 @@ import UiStore from './stores/UiStore';
 import UserStore from './stores/UserStore';
 
 import Loading from './components/Loading';
+
+// import 'normalize.css';
 import './styles';
 
 @observer

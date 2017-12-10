@@ -13883,10 +13883,21 @@ var UserStore = (_class = function UserStore() {
 
     return function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(credentials) {
+        var res;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                console.log(credentials);
+                _context2.next = 3;
+                return _api2.default.post('/register', credentials);
+
+              case 3:
+                res = _context2.sent;
+
+                console.log(res);
+
+              case 5:
               case 'end':
                 return _context2.stop();
             }
@@ -44018,6 +44029,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class,
     _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/App.js';
 
+// import 'normalize.css';
+
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -44068,13 +44082,13 @@ var App = (0, _mobxReact.observer)(_class = function (_Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 20
           }
         },
         _UiStore2.default.loading && _react2.default.createElement(_Loading2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 21
           }
         }),
         this.props.childen
@@ -45349,7 +45363,7 @@ var Fetcher = function () {
             json = void 0;
             _context.prev = 1;
             _context.next = 4;
-            return fetch(_config.apiHost + '/' + url, params);
+            return fetch(_config.apiHost + url, params);
 
           case 4:
             res = _context.sent;
@@ -45367,20 +45381,18 @@ var Fetcher = function () {
 
           case 9:
             json = _context.sent;
-            _context.next = 16;
+            _context.next = 15;
             break;
 
           case 12:
             _context.prev = 12;
             _context.t0 = _context['catch'](1);
+            throw _context.t0.message;
 
-            console.error(_context.t0);
-            throw _context.t0;
-
-          case 16:
+          case 15:
             return _context.abrupt('return', json);
 
-          case 17:
+          case 16:
           case 'end':
             return _context.stop();
         }
@@ -45660,7 +45672,7 @@ exports = module.exports = __webpack_require__(161)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  height: 100vh;\n  width: 100vw;\n  font-family: 'VT323', monospace;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\ni.icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.brand {\n  font-family: 'VT323', monospace;\n}\n.control-label {\n  font-size: 18px;\n}\n.form-control {\n  border: 2px solid rgba(0, 0, 0, 0.8);\n  color: rgba(0, 0, 0, 0.8);\n  font-size: 20px;\n  font-weight: bold;\n}\n.form-control:focus {\n  border: none;\n  outline: none;\n  box-shadow: none;\n  background: rgba(0, 0, 0, 0.8);\n  color: white;\n}\n", ""]);
+exports.push([module.i, "body {\n  height: 100vh;\n  width: 100vw;\n  font-family: 'VT323', monospace;\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\ni.icon {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.brand {\n  font-family: 'VT323', monospace;\n}\n.control-label {\n  font-size: 18px;\n}\n.form-control {\n  border: 2px solid #353535;\n  color: #353535;\n  font-size: 20px;\n  font-weight: bold;\n}\n.form-control:focus {\n  border: none;\n  outline: none;\n  box-shadow: none;\n  background: #353535;\n  color: white;\n}\na {\n  color: inherit;\n  text-decoration: none;\n}\na:focus,\na:active,\na:hover {\n  color: inherit;\n  text-decoration: none;\n}\n.btn {\n  outline: none;\n  box-shadow: none;\n  border: none;\n  text-decoration: none;\n}\n.btn:focus,\n.btn:active,\n.btn:hover {\n  outline: none;\n  box-shadow: none;\n  border: none;\n  text-decoration: none;\n}\n.btn.btn-primary {\n  background: #353535;\n  font-size: 20px;\n  font-weight: 400;\n  border: 2px solid #353535;\n}\n.btn.btn-primary:hover {\n  border: 2px solid #353535;\n  color: #353535;\n}\n.btn.btn-link {\n  color: inherit;\n}\n", ""]);
 
 // exports
 
@@ -45676,17 +45688,25 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = undefined;
-var _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class,
+    _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/index.js';
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _LoginFrame = __webpack_require__(536);
+var _mobxReact = __webpack_require__(524);
 
-var _LoginFrame2 = _interopRequireDefault(_LoginFrame);
+var _getFormData = __webpack_require__(921);
+
+var _getFormData2 = _interopRequireDefault(_getFormData);
+
+var _AuthForm = __webpack_require__(925);
+
+var _AuthForm2 = _interopRequireDefault(_AuthForm);
 
 var _UserStore = __webpack_require__(234);
 
@@ -45702,7 +45722,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var LoginScene = function (_Component) {
+var LoginScene = (0, _mobxReact.observer)(_class = function (_Component) {
   _inherits(LoginScene, _Component);
 
   function LoginScene() {
@@ -45717,168 +45737,78 @@ var LoginScene = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginScene.__proto__ || Object.getPrototypeOf(LoginScene)).call.apply(_ref, [this].concat(args))), _this), _this.onLocalLogin = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-            case 'end':
-              return _context.stop();
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginScene.__proto__ || Object.getPrototypeOf(LoginScene)).call.apply(_ref, [this].concat(args))), _this), _this.onLocalLogin = function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
+        var credentials;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+
+                credentials = (0, _getFormData2.default)(e.target);
+                _context.next = 4;
+                return _UserStore2.default.login(credentials);
+
+              case 4:
+              case 'end':
+                return _context.stop();
+            }
           }
-        }
-      }, _callee, _this2);
-    })), _temp), _possibleConstructorReturn(_this, _ret);
+        }, _callee, _this2);
+      }));
+
+      return function (_x) {
+        return _ref2.apply(this, arguments);
+      };
+    }(), _this.onLocalRegister = function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(e) {
+        var credentials;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                e.preventDefault();
+
+                credentials = (0, _getFormData2.default)(e.target);
+                _context2.next = 4;
+                return _UserStore2.default.register(credentials);
+
+              case 4:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, _this2);
+      }));
+
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }(), _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(LoginScene, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(_LoginFrame2.default, {
+      return _react2.default.createElement(_AuthForm2.default, {
         onLocalLogin: this.onLocalLogin,
+        onLocalRegister: this.onLocalRegister,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 26
         }
       });
     }
   }]);
 
   return LoginScene;
-}(_react.Component);
+}(_react.Component)) || _class;
 
 exports.default = LoginScene;
 
 /***/ }),
-/* 536 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/components/LoginFrame/index.js';
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactFeather = __webpack_require__(537);
-
-var Icon = _interopRequireWildcard(_reactFeather);
-
-var _FieldGroup = __webpack_require__(235);
-
-var _FieldGroup2 = _interopRequireDefault(_FieldGroup);
-
-var _PhoneForm = __webpack_require__(918);
-
-var _PhoneForm2 = _interopRequireDefault(_PhoneForm);
-
-__webpack_require__(919);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var LoginFrame = function LoginFrame() {
-  return _react2.default.createElement(
-    'div',
-    { className: 'login-container', __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      }
-    },
-    _react2.default.createElement(
-      'div',
-      { className: 'login-brand', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        }
-      },
-      _react2.default.createElement(
-        'span',
-        { className: 'brand', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          }
-        },
-        'Chatter'
-      )
-    ),
-    _react2.default.createElement(_PhoneForm2.default, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      }
-    }),
-    _react2.default.createElement(
-      'div',
-      { className: 'login-social', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        }
-      },
-      _react2.default.createElement(
-        'div',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 18
-          }
-        },
-        _react2.default.createElement(Icon.Facebook, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
-          }
-        })
-      ),
-      _react2.default.createElement(
-        'div',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          }
-        },
-        _react2.default.createElement(
-          'a',
-          { href: 'http://127.0.0.1:8081/api/login/twitter', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 22
-            }
-          },
-          _react2.default.createElement(Icon.Twitter, {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 23
-            }
-          })
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'active', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 26
-          }
-        },
-        _react2.default.createElement(Icon.Phone, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 27
-          }
-        })
-      )
-    )
-  );
-};
-
-exports.default = LoginFrame;
-
-/***/ }),
+/* 536 */,
 /* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -75020,7 +74950,203 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 918 */
+/* 918 */,
+/* 919 */,
+/* 920 */,
+/* 921 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+var NODE_LIST_CLASSES = {
+  '[object HTMLCollection]': true,
+  '[object NodeList]': true,
+  '[object RadioNodeList]': true
+};
+
+// .type values for elements which can appear in .elements and should be ignored
+var IGNORED_ELEMENT_TYPES = {
+  'button': true,
+  'fieldset': true,
+  // 'keygen': true,
+  // 'output': true,
+  'reset': true,
+  'submit': true
+};
+
+var CHECKED_INPUT_TYPES = {
+  'checkbox': true,
+  'radio': true
+};
+
+var TRIM_RE = /^\s+|\s+$/g;
+
+var slice = Array.prototype.slice;
+var toString = Object.prototype.toString;
+
+/**
+ * @param {HTMLFormElement} form
+ * @param {Object} options
+ * @return {Object.<string,(string|Array.<string>)>} an object containing
+ *   submittable value(s) held in the form's .elements collection, with
+ *   properties named as per element names or ids.
+ */
+function getFormData(form) {
+  var options = arguments.length <= 1 || arguments[1] === undefined ? { trim: false } : arguments[1];
+
+  if (!form) {
+    throw new Error('A form is required by getFormData, was given form=' + form);
+  }
+
+  var data = {};
+  var elementName = undefined;
+  var elementNames = [];
+  var elementNameLookup = {};
+
+  // Get unique submittable element names for the form
+  for (var i = 0, l = form.elements.length; i < l; i++) {
+    var element = form.elements[i];
+    if (IGNORED_ELEMENT_TYPES[element.type] || element.disabled) {
+      continue;
+    }
+    elementName = element.name || element.id;
+    if (elementName && !elementNameLookup[elementName]) {
+      elementNames.push(elementName);
+      elementNameLookup[elementName] = true;
+    }
+  }
+
+  // Extract element data name-by-name for consistent handling of special cases
+  // around elements which contain multiple inputs.
+  for (var i = 0, l = elementNames.length; i < l; i++) {
+    elementName = elementNames[i];
+    var value = getNamedFormElementData(form, elementName, options);
+    if (value != null) {
+      data[elementName] = value;
+    }
+  }
+
+  return data;
+}
+
+/**
+ * @param {HTMLFormElement} form
+ * @param {string} elementName
+ * @param {Object} options
+ * @return {(string|Array.<string>)} submittable value(s) in the form for a
+ *   named element from its .elements collection, or null if there was no
+ *   element with that name or the element had no submittable value(s).
+ */
+function getNamedFormElementData(form, elementName) {
+  var options = arguments.length <= 2 || arguments[2] === undefined ? { trim: false } : arguments[2];
+
+  if (!form) {
+    throw new Error('A form is required by getNamedFormElementData, was given form=' + form);
+  }
+  if (!elementName && toString.call(elementName) !== '[object String]') {
+    throw new Error('A form element name is required by getNamedFormElementData, was given elementName=' + elementName);
+  }
+
+  var element = form.elements[elementName];
+  if (!element || element.disabled) {
+    return null;
+  }
+
+  if (!NODE_LIST_CLASSES[toString.call(element)]) {
+    return getFormElementValue(element, options.trim);
+  }
+
+  // Deal with multiple form controls which have the same name
+  var data = [];
+  var allRadios = true;
+  for (var i = 0, l = element.length; i < l; i++) {
+    if (element[i].disabled) {
+      continue;
+    }
+    if (allRadios && element[i].type !== 'radio') {
+      allRadios = false;
+    }
+    var value = getFormElementValue(element[i], options.trim);
+    if (value != null) {
+      data = data.concat(value);
+    }
+  }
+
+  // Special case for an element with multiple same-named inputs which were all
+  // radio buttons: if there was a selected value, only return the value.
+  if (allRadios && data.length === 1) {
+    return data[0];
+  }
+
+  return data.length > 0 ? data : null;
+}
+
+/**
+ * @param {HTMLElement} element a form element.
+ * @param {booleam} trim should values for text entry inputs be trimmed?
+ * @return {(string|Array.<string>|File|Array.<File>)} the element's submittable
+ *   value(s), or null if it had none.
+ */
+function getFormElementValue(element, trim) {
+  var value = null;
+  var type = element.type;
+
+  if (type === 'select-one') {
+    if (element.options.length) {
+      value = element.options[element.selectedIndex].value;
+    }
+    return value;
+  }
+
+  if (type === 'select-multiple') {
+    value = [];
+    for (var i = 0, l = element.options.length; i < l; i++) {
+      if (element.options[i].selected) {
+        value.push(element.options[i].value);
+      }
+    }
+    if (value.length === 0) {
+      value = null;
+    }
+    return value;
+  }
+
+  // If a file input doesn't have a files attribute, fall through to using its
+  // value attribute.
+  if (type === 'file' && 'files' in element) {
+    if (element.multiple) {
+      value = slice.call(element.files);
+      if (value.length === 0) {
+        value = null;
+      }
+    } else {
+      // Should be null if not present, according to the spec
+      value = element.files[0];
+    }
+    return value;
+  }
+
+  if (!CHECKED_INPUT_TYPES[type]) {
+    value = trim ? element.value.replace(TRIM_RE, '') : element.value;
+  } else if (element.checked) {
+    value = element.value;
+  }
+
+  return value;
+}
+
+getFormData.getNamedFormElementData = getNamedFormElementData;
+
+exports['default'] = getFormData;
+module.exports = exports['default'];
+
+/***/ }),
+/* 922 */,
+/* 923 */,
+/* 924 */,
+/* 925 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75029,56 +75155,355 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/components/PhoneForm.js';
+exports.default = undefined;
+var _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/components/AuthForm/index.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactFeather = __webpack_require__(537);
+
+var Icon = _interopRequireWildcard(_reactFeather);
+
 var _FieldGroup = __webpack_require__(235);
 
 var _FieldGroup2 = _interopRequireDefault(_FieldGroup);
 
+var _Login = __webpack_require__(926);
+
+var _Login2 = _interopRequireDefault(_Login);
+
+var _Register = __webpack_require__(927);
+
+var _Register2 = _interopRequireDefault(_Register);
+
+__webpack_require__(928);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var PhoneForm = function PhoneForm() {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AuthForm = function (_Component) {
+  _inherits(AuthForm, _Component);
+
+  function AuthForm() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, AuthForm);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AuthForm.__proto__ || Object.getPrototypeOf(AuthForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      mode: 'login'
+    }, _this.changeMode = function (mode) {
+      return _this.setState({ mode: mode });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(AuthForm, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          onLocalLogin = _props.onLocalLogin,
+          onLocalRegister = _props.onLocalRegister;
+      var mode = this.state.mode;
+
+
+      var Form = mode === 'login' ? _react2.default.createElement(_Login2.default, { onSubmit: onLocalLogin, changeMode: this.changeMode, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        }
+      }) : _react2.default.createElement(_Register2.default, { onSubmit: onLocalRegister, changeMode: this.changeMode, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        }
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'login-container', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27
+          }
+        },
+        _react2.default.createElement(
+          'div',
+          { className: 'login-brand', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 28
+            }
+          },
+          _react2.default.createElement(
+            'span',
+            { className: 'brand', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 29
+              }
+            },
+            'Chatter'
+          )
+        ),
+        Form,
+        _react2.default.createElement(
+          'div',
+          { className: 'login-social', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 35
+            }
+          },
+          _react2.default.createElement(
+            'div',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 36
+              }
+            },
+            _react2.default.createElement(Icon.Facebook, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 37
+              }
+            })
+          ),
+          _react2.default.createElement(
+            'div',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 39
+              }
+            },
+            _react2.default.createElement(
+              'a',
+              { href: 'http://127.0.0.1:8081/api/login/twitter', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 40
+                }
+              },
+              _react2.default.createElement(Icon.Twitter, {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 41
+                }
+              })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'active', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 44
+              }
+            },
+            _react2.default.createElement(Icon.Phone, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 45
+              }
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return AuthForm;
+}(_react.Component);
+
+exports.default = AuthForm;
+
+/***/ }),
+/* 926 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/components/AuthForm/components/Login.js';
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(494);
+
+var _FieldGroup = __webpack_require__(235);
+
+var _FieldGroup2 = _interopRequireDefault(_FieldGroup);
+
+var _reactBootstrap = __webpack_require__(778);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LoginForm = function LoginForm(_ref) {
+  var onSubmit = _ref.onSubmit,
+      changeMode = _ref.changeMode;
   return _react2.default.createElement(
     'form',
-    { className: 'login-form', __source: {
+    {
+      className: 'login-form',
+      onSubmit: onSubmit,
+      __source: {
         fileName: _jsxFileName,
-        lineNumber: 5
+        lineNumber: 7
       }
     },
     _react2.default.createElement(_FieldGroup2.default, {
-      type: 'number',
-      label: 'Phone number',
-      placeholder: '380000000000',
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 6
-      }
-    }),
-    _react2.default.createElement(_FieldGroup2.default, {
-      type: 'password',
-      label: 'Password',
+      type: 'email',
+      name: 'email',
+      label: 'Email',
+      placeholder: 'abracadabra@gmail.com',
+      required: true,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
       }
-    })
+    }),
+    _react2.default.createElement(_FieldGroup2.default, {
+      type: 'password',
+      name: 'password',
+      label: 'Password',
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }),
+    _react2.default.createElement(
+      _reactBootstrap.Button,
+      { bsStyle: 'primary', type: 'submit', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        }
+      },
+      'Login'
+    ),
+    _react2.default.createElement(
+      _reactBootstrap.Button,
+      { bsStyle: 'link', onClick: function onClick() {
+          return changeMode('register');
+        }, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        }
+      },
+      'First time here?'
+    )
   );
 };
 
-exports.default = PhoneForm;
+exports.default = LoginForm;
 
 /***/ }),
-/* 919 */
+/* 927 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = '/Users/atamas1llya/Desktop/chatter-frontend/src/scenes/Login/components/AuthForm/components/Register.js';
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(494);
+
+var _FieldGroup = __webpack_require__(235);
+
+var _FieldGroup2 = _interopRequireDefault(_FieldGroup);
+
+var _reactBootstrap = __webpack_require__(778);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RegisterForm = function RegisterForm(_ref) {
+  var onSubmit = _ref.onSubmit,
+      changeMode = _ref.changeMode;
+  return _react2.default.createElement(
+    'form',
+    {
+      className: 'login-form',
+      onSubmit: onSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 7
+      }
+    },
+    _react2.default.createElement(_FieldGroup2.default, {
+      type: 'email',
+      name: 'email',
+      label: 'Email',
+      placeholder: 'abracadabra@gmail.com',
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      }
+    }),
+    _react2.default.createElement(_FieldGroup2.default, {
+      type: 'password',
+      name: 'password',
+      label: 'Password',
+      required: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }),
+    _react2.default.createElement(
+      _reactBootstrap.Button,
+      { bsStyle: 'primary', type: 'submit', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        }
+      },
+      'Register'
+    ),
+    _react2.default.createElement(
+      _reactBootstrap.Button,
+      { bsStyle: 'link', onClick: function onClick() {
+          return changeMode('login');
+        }, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        }
+      },
+      'Already have account?'
+    )
+  );
+};
+
+exports.default = RegisterForm;
+
+/***/ }),
+/* 928 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(920);
+var content = __webpack_require__(929);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -75103,7 +75528,7 @@ if(false) {
 }
 
 /***/ }),
-/* 920 */
+/* 929 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(161)(undefined);
@@ -75111,7 +75536,7 @@ exports = module.exports = __webpack_require__(161)(undefined);
 
 
 // module
-exports.push([module.i, ".control-label {\n  font-size: 18px;\n}\n.form-control {\n  border: 2px solid rgba(0, 0, 0, 0.8);\n  color: rgba(0, 0, 0, 0.8);\n  font-size: 20px;\n  font-weight: bold;\n}\n.form-control:focus {\n  border: none;\n  outline: none;\n  box-shadow: none;\n  background: rgba(0, 0, 0, 0.8);\n  color: white;\n}\n.login-container {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.login-container > div,\n.login-container > form {\n  flex: 1;\n  width: 400px;\n  max-width: 85vw;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.login-container .login-brand {\n  font-size: 55px;\n}\n.login-container .login-form {\n  flex-direction: column;\n  align-items: stretch;\n}\n.login-container .login-social {\n  justify-content: space-around;\n}\n.login-container .login-social > div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 50px;\n  height: 50px;\n  cursor: pointer;\n}\n.login-container .login-social > div.active {\n  border: 2px solid rgba(0, 0, 0, 0.8);\n}\n", ""]);
+exports.push([module.i, ".control-label {\n  font-size: 18px;\n}\n.form-control {\n  border: 2px solid #353535;\n  color: #353535;\n  font-size: 20px;\n  font-weight: bold;\n}\n.form-control:focus {\n  border: none;\n  outline: none;\n  box-shadow: none;\n  background: #353535;\n  color: white;\n}\na {\n  color: inherit;\n  text-decoration: none;\n}\na:focus,\na:active,\na:hover {\n  color: inherit;\n  text-decoration: none;\n}\n.btn {\n  outline: none;\n  box-shadow: none;\n  border: none;\n  text-decoration: none;\n}\n.btn:focus,\n.btn:active,\n.btn:hover {\n  outline: none;\n  box-shadow: none;\n  border: none;\n  text-decoration: none;\n}\n.btn.btn-primary {\n  background: #353535;\n  font-size: 20px;\n  font-weight: 400;\n  border: 2px solid #353535;\n}\n.btn.btn-primary:hover {\n  border: 2px solid #353535;\n  color: #353535;\n}\n.btn.btn-link {\n  color: inherit;\n}\n.login-container {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.login-container > div,\n.login-container > form {\n  flex: 1;\n  width: 400px;\n  max-width: 85vw;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.login-container .login-brand {\n  font-size: 55px;\n}\n.login-container .login-form {\n  flex-direction: column;\n  align-items: stretch;\n}\n.login-container .login-social {\n  justify-content: space-around;\n}\n.login-container .login-social > div {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 50px;\n  height: 50px;\n  cursor: pointer;\n}\n.login-container .login-social > div.active {\n  border: 2px solid #353535;\n}\n", ""]);
 
 // exports
 

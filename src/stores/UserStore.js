@@ -11,7 +11,9 @@ class UserStore {
   }
 
   @action register = async (credentials) => {
-
+    console.log(credentials);
+    const res = await api.post('/register', credentials);
+    console.log(res);
   }
 }
 
