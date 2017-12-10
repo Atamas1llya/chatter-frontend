@@ -1,0 +1,61 @@
+#loading-overlay {
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+  left: 0;
+  top: 0;
+
+  background: rgba(238, 238, 238,.7);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5vw;
+
+  font-size: 18px;
+
+  > .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    color: rgba(0,0,0,.78);
+
+    flex: 1;
+  }
+
+  > .preloader {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+
+    flex: 1;
+
+    > i {
+      animation: spin 2s infinite;
+      animation-timing-function: linear;
+      opacity: 0.7;
+
+      margin: 0 8px;
+    }
+
+    .ion-load-d {
+      margin: 0 2px !important;
+      padding: 0 !important;
+
+      width: 25px;
+      height: 25px;
+    }
+
+    > span {
+      opacity: 0.6;
+      font-family: 'VT323', monospace;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+      "no-underscore-dangle": 0,
+      "quote-props": 0,
+      "arrow-body-style": 0,
+      "import/prefer-default-export": 0,
+      "react/jsx-filename-extension": 0,
+      "react/prop-types": 0,
+      "react/require-default-props": 0,
+      "max-len": 0,
+      "react/prefer-stateless-function": 0,
+      "camelcase": 0,
+      "no-else-return": 0
+    },
+    "globals": {
+      "fetch": 0,
+      "document": 0,
+      "localStorage": 0,
+      "window": 0
+    }
+}
