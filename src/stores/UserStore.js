@@ -27,6 +27,10 @@ class UserStore {
     return res;
   }
 
+  @action handleAuthRedirect = (token) => {
+    // TODO: verify user token, get profile and save credentails
+  }
+
   @action storeCredentials = (token, profile) => {
     if (token) {
       localStorage.setItem('user_token', token);
