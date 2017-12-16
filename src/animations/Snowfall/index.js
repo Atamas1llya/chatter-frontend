@@ -1,6 +1,8 @@
 // TODO: Let is snow, let it snow, let it snow...
 import * as THREE from 'three';
 
+import Flake from './Flake';
+
 import './styles.less';
 
 export default class Snowfall {
@@ -10,10 +12,44 @@ export default class Snowfall {
 
     this.renderer = new THREE.WebGLRenderer({
       alpha: true,
+      antialias: true,
     });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
 
+    this.flakes = [];
+
+    this.camera.position.z = 5;
+
     document.querySelector(query).appendChild(this.renderer.domElement);
+    window.addEventListener('resize', this.resize);
+
+    for (let i = 0; i < 20; i++) {
+      setTimeout(() => {
+        this.createSnowFlake();
+      }, 1000 * i);
+    }
+
+    this.animate();
   }
 
+  createSnowFlake = () => {
+    const flake = new Flake();
+    this.scene.add(flake.flake);
+    this.flakes.push(flake);
+  }
+
+  animate = () => {
+    requestAnimationFrame(this.animate);
+
+    this.flakes.forEach(flake => flake.update());
+
+    this.renderer.render(this.scene, this.camera);
+  }
+
+  resize = () => {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
 }
