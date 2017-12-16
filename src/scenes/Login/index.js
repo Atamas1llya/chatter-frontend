@@ -13,7 +13,12 @@ import './style.less';
 @observer
 export default class LoginScene extends Component {
   componentDidMount() {
-    new Snowfall('#snowfall-container');
+    this.snowfall = new Snowfall('#snowfall-container');
+  }
+
+  componentWillUnmount() {
+    this.snowfall.destroy();
+    delete this.snowfall;
   }
 
   onLocalLogin = async (e) => {

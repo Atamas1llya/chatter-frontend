@@ -39,7 +39,7 @@ export default class Snowfall {
   }
 
   animate = () => {
-    requestAnimationFrame(this.animate);
+    this.id = requestAnimationFrame(this.animate);
 
     this.flakes.forEach(flake => flake.update());
 
@@ -47,9 +47,15 @@ export default class Snowfall {
   }
 
   resize = () => {
+    console.log('resizing...');
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
+  destroy = () => {
+    cancelAnimationFrame(this.id);// Stop the animation
+    window.removeEventListener('resize', this.resize);
   }
 }
