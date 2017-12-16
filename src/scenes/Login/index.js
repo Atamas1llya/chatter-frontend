@@ -6,8 +6,16 @@ import { Redirect } from 'react-router';
 import AuthForm from './components/AuthForm';
 import UserStore from '../../stores/UserStore';
 
+import Snowfall from '../../animations/Snowfall';
+
+import './style.less';
+
 @observer
 export default class LoginScene extends Component {
+  componentDidMount() {
+    new Snowfall('#snowfall-container');
+  }
+
   onLocalLogin = async (e) => {
     e.preventDefault();
 
@@ -25,10 +33,13 @@ export default class LoginScene extends Component {
   render() {
     if (!UserStore.token) {
       return (
-        <AuthForm
-          onLocalLogin={this.onLocalLogin}
-          onLocalRegister={this.onLocalRegister}
-        />
+        <div id="login-container">
+          <div id="snowfall-container"></div>
+          <AuthForm
+            onLocalLogin={this.onLocalLogin}
+            onLocalRegister={this.onLocalRegister}
+          />
+        </div>
       );
     } else {
       return (
