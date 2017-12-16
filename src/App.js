@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
+import { Redirect } from 'react-router';
 
 import UiStore from './stores/UiStore';
+import UserStore from './stores/UserStore';
 
 import Loading from './components/Loading';
 
@@ -15,11 +17,17 @@ export default class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        { UiStore.loading && <Loading /> }
-        { this.props.childen }
-      </div>
-    );
+    if (UserStore.token) {
+      return (
+        <div>
+          { UiStore.loading && <Loading /> }
+          { this.props.childen }
+        </div>
+      );
+    } else {
+      return (
+        <Redirect to='/login' />
+      )
+    }
   }
 }

@@ -27,8 +27,11 @@ class UserStore {
     return res;
   }
 
-  @action handleAuthRedirect = (token) => {
+  @action handleAuthRedirect = async (token) => {
     // TODO: verify user token, get profile and save credentails
+    const res = await api.get('/user/profile', token);
+
+    this.storeCredentials(token, res.profile);
   }
 
   @action storeCredentials = (token, profile) => {
