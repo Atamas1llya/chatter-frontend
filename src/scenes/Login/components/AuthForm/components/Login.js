@@ -25,6 +25,6 @@ const LoginForm = ({ onSubmit, changeMode }) => (
     <Button bsStyle="primary" type="submit">Login</Button>
     <Button bsStyle="link" onClick={() => changeMode('register')}>First time here?</Button>
   </form>
-)
+);
 
 export default LoginForm;

@@ -14,6 +14,6 @@ const Fetcher = async (url, params) => {
   }
 
   return json;
-}
+};
 
 export default Fetcher;

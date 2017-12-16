@@ -25,6 +25,6 @@ const RegisterForm = ({ onSubmit, changeMode }) => (
     <Button bsStyle="primary" type="submit">Register</Button>
     <Button bsStyle="link" onClick={() => changeMode('login')}>Already have account?</Button>
   </form>
-)
+);
 
 export default RegisterForm;

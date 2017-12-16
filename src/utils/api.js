@@ -8,7 +8,7 @@ const apiGet = async (url, token = 0) => {
       'Authorization': token,
     },
   });
-}
+};
 
 const apiPost = async (url, body, token = 0) => {
   return await Fetcher(url, {
@@ -19,7 +19,7 @@ const apiPost = async (url, body, token = 0) => {
     },
     body: JSON.stringify(body),
   });
-}
+};
 
 const apiPut = async (url, body, token = 0) => {
   return await Fetcher(url, {
@@ -30,7 +30,7 @@ const apiPut = async (url, body, token = 0) => {
     },
     body: JSON.stringify(body),
   });
-}
+};
 
 const apiDelete = async (url, token = 0) => {
   return await Fetcher(url, {
@@ -40,7 +40,7 @@ const apiDelete = async (url, token = 0) => {
       'Authorization': token,
     },
   });
-}
+};
 
 module.exports = {
   get: apiGet,

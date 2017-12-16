@@ -21,7 +21,7 @@ export default class AuthForm extends Component {
 
     const Form = mode === 'login'
       ? <LoginForm onSubmit={onLocalLogin} changeMode={this.changeMode} />
-      : <RegisterForm onSubmit={onLocalRegister} changeMode={this.changeMode} />
+      : <RegisterForm onSubmit={onLocalRegister} changeMode={this.changeMode} />;
 
     return (
       <div className="login-container">
@@ -46,6 +46,6 @@ export default class AuthForm extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

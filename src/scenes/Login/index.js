@@ -11,7 +11,7 @@ export default class LoginScene extends Component {
     e.preventDefault();
 
     const credentials = getFormData(e.target);
-    await UserStore.login(credentials)
+    await UserStore.login(credentials);
   }
 
   onLocalRegister = async (e) => {
@@ -27,6 +27,6 @@ export default class LoginScene extends Component {
         onLocalLogin={this.onLocalLogin}
         onLocalRegister={this.onLocalRegister}
       />
-    )
+    );
   }
 }
