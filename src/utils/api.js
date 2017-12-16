@@ -1,7 +1,7 @@
 import Fetcher from './fetcher';
 
-const apiGet = async (url, token = 0) => {
-  return await Fetcher(url, {
+const apiGet = (url, token = 0) => {
+  return Fetcher(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -10,8 +10,8 @@ const apiGet = async (url, token = 0) => {
   });
 };
 
-const apiPost = async (url, body, token = 0) => {
-  return await Fetcher(url, {
+const apiPost = (url, body, token = 0) => {
+  return Fetcher(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -21,8 +21,8 @@ const apiPost = async (url, body, token = 0) => {
   });
 };
 
-const apiPut = async (url, body, token = 0) => {
-  return await Fetcher(url, {
+const apiPut = (url, body, token = 0) => {
+  return Fetcher(url, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -32,8 +32,8 @@ const apiPut = async (url, body, token = 0) => {
   });
 };
 
-const apiDelete = async (url, token = 0) => {
-  return await Fetcher(url, {
+const apiDelete = (url, token = 0) => {
+  return Fetcher(url, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

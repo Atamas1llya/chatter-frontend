@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import UiStore from './stores/UiStore';
-import UserStore from './stores/UserStore';
 
 import Loading from './components/Loading';
 

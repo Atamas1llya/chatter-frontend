@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import getFormData from 'get-form-data';
+import { Redirect } from 'react-router';
 
 import AuthForm from './components/AuthForm';
 import UserStore from '../../stores/UserStore';
@@ -22,11 +23,17 @@ export default class LoginScene extends Component {
   }
 
   render() {
-    return (
-      <AuthForm
-        onLocalLogin={this.onLocalLogin}
-        onLocalRegister={this.onLocalRegister}
-      />
-    );
+    if (!UserStore.token) {
+      return (
+        <AuthForm
+          onLocalLogin={this.onLocalLogin}
+          onLocalRegister={this.onLocalRegister}
+        />
+      );
+    } else {
+      return (
+        <Redirect to="/" />
+      );
+    }
   }
 }

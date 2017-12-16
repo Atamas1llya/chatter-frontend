@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import FieldGroup from '../../../../../components/FieldGroup';
 import { Button } from 'react-bootstrap';
+import FieldGroup from '../../../../../components/FieldGroup';
 
 const RegisterForm = ({ onSubmit, changeMode }) => (
   <form

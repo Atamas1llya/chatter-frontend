@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
 import * as Icon from 'react-feather';
-import FieldGroup from '../../../../components/FieldGroup';
 
 import LoginForm from './components/Login';
 import RegisterForm from './components/Register';
