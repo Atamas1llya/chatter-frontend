@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
 import * as Icon from 'react-feather';
 import FieldGroup from '../../../../components/FieldGroup';
@@ -19,12 +20,17 @@ export default class AuthForm extends Component {
     const { onLocalLogin, onLocalRegister } = this.props;
     const { mode } = this.state;
 
-    const Form = mode === 'login'
+    const Form = (mode === 'login')
       ? <LoginForm onSubmit={onLocalLogin} changeMode={this.changeMode} />
       : <RegisterForm onSubmit={onLocalRegister} changeMode={this.changeMode} />;
 
     return (
       <div className="login-container">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Auth || Chatter</title>
+          <meta name="theme-color" content="#353535" />
+        </Helmet>
         <div className="login-brand">
           <span className="brand">Chatter</span>
         </div>

@@ -4,7 +4,9 @@ const Fetcher = async (url, params) => {
   let json;
 
   try {
-    const res = await fetch(apiHost + url, params);
+    const res = await fetch(apiHost + url, {
+      ...params,
+    });
 
     if (!res.ok) throw new Error(res.statusText);
 
