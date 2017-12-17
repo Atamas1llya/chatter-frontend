@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node_modules/.bin/pushstate-server ./dist 8080",
     "watch": "node_modules/.bin/webpack --watch --colors --progress",
-    "build": "node_modules/.bin/webpack -p --progress",
+    "build": "NODE_ENV=production node_modules/.bin/webpack -p --progress",
     "lint": "node_modules/.bin/eslint ."
   },
   "author": "atamas1llya",
@@ -35,6 +35,7 @@
     "prerender-spa-plugin": "^2.1.0",
     "pushstate-server": "^3.0.1",
     "style-loader": "^0.19.0",
+    "sw-precache-webpack-plugin": "^0.11.4",
     "webpack": "^3.9.1",
     "webpack-pwa-manifest": "^3.3.4"
   },

@@ -3,7 +3,7 @@ const OfflinePlugin = require('offline-plugin');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 
-module.exports = {
+const config = {
   entry: ['babel-polyfill', './src/index.js'],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -27,7 +27,6 @@ module.exports = {
     extensions: ['.js', '.jsx', '.less'],
   },
   plugins: [
-    new OfflinePlugin(),
     new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
       [ '/', '/login' ]
@@ -40,3 +39,11 @@ module.exports = {
     })
   ]
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new OfflinePlugin()
+  )
+}
+
+module.exports = config;
