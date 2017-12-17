@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { Redirect } from 'react-router';
+import { Route } from 'react-router-dom';
 
 import UiStore from './stores/UiStore';
 import UserStore from './stores/UserStore';
 
 import SideBar from './components/SideBar';
 import Loading from './components/Loading';
+
+// screens
+import IndexScreen from './scenes/Index';
 
 // import 'normalize.css';
 import './styles';
@@ -22,8 +26,11 @@ export default class App extends Component {
       return (
         <div>
           <SideBar />
+
+          <div id="app-container">
+            <Route exact path="/" component={IndexScreen} />
+          </div>
           { UiStore.loading && <Loading /> }
-          { this.props.childen }
         </div>
       );
     } else {

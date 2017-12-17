@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import getFormData from 'get-form-data';
 import { Redirect } from 'react-router';
+import { Route } from 'react-router-dom';
 
 import AuthForm from './components/AuthForm';
 import UserStore from '../../stores/UserStore';
-
 import Snowfall from '../../animations/Snowfall';
+
+import AuthRedirectHandler from '../../components/handlers/AuthRedirectHandler';
 
 import './style.less';
 
@@ -39,7 +41,10 @@ export default class LoginScene extends Component {
     if (!UserStore.token) {
       return (
         <div id="login-container">
+          <Route path="/login/:status" component={AuthRedirectHandler} />
+          
           <div id="snowfall-container" />
+
           <AuthForm
             onLocalLogin={this.onLocalLogin}
             onLocalRegister={this.onLocalRegister}

@@ -10,6 +10,7 @@ export default class AuthRedirectHandler extends Component {
   state = {
     status: 'pending',
   }
+
   async componentWillMount() {
     const { status } = this.props.match.params;
 
