@@ -23,10 +23,11 @@ export default class Snowfall {
     document.querySelector(query).appendChild(this.renderer.domElement);
     window.addEventListener('resize', this.resize);
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 100; i++) {
       setTimeout(() => {
+        console.log(i);
         this.createSnowFlake();
-      }, 1000 * i);
+      }, 100 * i * Math.random());
     }
 
     this.animate();
@@ -47,7 +48,6 @@ export default class Snowfall {
   }
 
   resize = () => {
-    console.log('resizing...');
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
 

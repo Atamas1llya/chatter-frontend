@@ -47,7 +47,7 @@ export default class AuthForm extends Component {
             </a>
           </div>
           <div className="active">
-            <Icon.Phone />
+            <Icon.Mail />
           </div>
         </div>
       </div>
