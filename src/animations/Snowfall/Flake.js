@@ -2,7 +2,7 @@ import * as THREE from 'three';
 
 const generateRandomNumber = (min, max) => {
   return Math.random() * (max - min) + min;
-}
+};
 
 export default class Flake {
   constructor() {
@@ -21,7 +21,7 @@ export default class Flake {
     // this.xSpeed = 0.004;
     // this.ySpeed = 0.01;
     // this.rotSpeed = 0.01;
-    
+
     this.xSpeed = generateRandomNumber(0.003, 0.005);
     this.ySpeed = generateRandomNumber(0.005, 0.02);
     this.rotSpeed = generateRandomNumber(0.05, 0.005);
@@ -69,7 +69,5 @@ export default class Flake {
     if (position.x < -this.xLim) {
       this.flake.position.x = this.xLim;
     }
-
   }
-
 }

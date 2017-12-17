@@ -39,7 +39,7 @@ export default class LoginScene extends Component {
     if (!UserStore.token) {
       return (
         <div id="login-container">
-          <div id="snowfall-container"></div>
+          <div id="snowfall-container" />
           <AuthForm
             onLocalLogin={this.onLocalLogin}
             onLocalRegister={this.onLocalRegister}

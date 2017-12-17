@@ -8,7 +8,7 @@ import './styles.less';
 export default class Snowfall {
   constructor(query) {
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     this.renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -25,7 +25,6 @@ export default class Snowfall {
 
     for (let i = 0; i < 100; i++) {
       setTimeout(() => {
-        console.log(i);
         this.createSnowFlake();
       }, 100 * i * Math.random());
     }
