@@ -25,7 +25,7 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.less'],
   },
-  plugins: []
+  plugins: [],
 };
 
 if (process.env.NODE_ENV === 'production') {
@@ -33,9 +33,9 @@ if (process.env.NODE_ENV === 'production') {
     new OfflinePlugin(),
     new PrerenderSpaPlugin(
       path.join(__dirname, '../dist'),
-      [ '/', '/login' ]
+      ['/', '/login'],
     ),
-  )
+  );
 }
 
 module.exports = config;

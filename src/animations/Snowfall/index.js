@@ -44,7 +44,7 @@ export default class Snowfall {
   changeFlakesColor = (color) => {
     this.flakeColor = color;
     this.flakes.forEach((flake) => {
-      flake.flake.material.color.set(color)
+      flake.flake.material.color.set(color);
     });
   }
 

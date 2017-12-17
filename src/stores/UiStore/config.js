@@ -8,5 +8,5 @@ module.exports = {
       background: '#fff',
       color: '#353535',
     },
-  }
-}
+  },
+};

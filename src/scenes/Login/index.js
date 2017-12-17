@@ -20,7 +20,7 @@ export default class LoginScene extends Component {
   componentDidMount() {
     this.snowfall = new Snowfall('#snowfall-container', UiStore.colorScheme.background);
     this.disposer = observe(UiStore, (change) => {
-      this.snowfall.changeFlakesColor(UiStore.colorScheme.background)
+      this.snowfall.changeFlakesColor(UiStore.colorScheme.background);
     });
   }
 

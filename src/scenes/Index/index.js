@@ -5,6 +5,6 @@ export default class Index extends Component {
     console.log('123');
     return (
       <div>Index</div>
-    )
+    );
   }
 }
