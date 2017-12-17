@@ -5,10 +5,10 @@ const generateRandomNumber = (min, max) => {
 };
 
 export default class Flake {
-  constructor() {
+  constructor({ color }) {
     const size = generateRandomNumber(0.009, 0.07);
     const geometry = new THREE.PlaneGeometry(size, size);
-    const material = new THREE.MeshBasicMaterial({ color: '#535353' });
+    const material = new THREE.MeshBasicMaterial({ color });
     this.flake = new THREE.Mesh(geometry, material);
 
     this.yLim = 3.87;

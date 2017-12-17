@@ -22,7 +22,6 @@ class UiStore {
 
   applyColorScheme = () => {
     const { colorScheme } = this;
-    console.log(colorScheme);
 
     document.documentElement.style.setProperty('--theme-black', colorScheme.background);
     document.documentElement.style.setProperty('--theme-white', colorScheme.color);

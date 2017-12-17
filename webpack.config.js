@@ -1,7 +1,6 @@
 const path = require('path');
 const OfflinePlugin = require('offline-plugin');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 const config = {
   entry: ['babel-polyfill', './src/index.js'],
@@ -26,23 +25,16 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.less'],
   },
-  plugins: [
-    new PrerenderSpaPlugin(
-      path.join(__dirname, '../dist'),
-      [ '/', '/login' ]
-    ),
-    new WebpackPwaManifest({
-      name: 'Chatter',
-      short_name: 'Chatter',
-      description: 'Chatter pet project',
-      background_color: '#ffffff',
-    })
-  ]
+  plugins: []
 };
 
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
-    new OfflinePlugin()
+    new OfflinePlugin(),
+    new PrerenderSpaPlugin(
+      path.join(__dirname, '../dist'),
+      [ '/', '/login' ]
+    ),
   )
 }
 
