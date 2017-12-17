@@ -26,7 +26,7 @@ export default class Snowfall {
     for (let i = 0; i < 100; i++) {
       setTimeout(() => {
         this.createSnowFlake();
-      }, 100 * i * Math.random());
+      }, 300 * i * Math.random());
     }
 
     this.animate();
