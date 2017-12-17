@@ -1,9 +1,0 @@
-CACHE MANIFEST
-#ver:2017-12-17 18:50:26
-#plugin:4.8.5
-
-CACHE:
-../bundle.js
-
-NETWORK:
-*

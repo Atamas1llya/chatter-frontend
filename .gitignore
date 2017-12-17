@@ -6,7 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Webpack
-*bundle.**
+*bundle.*
+appcache
 
 .DS_store
 
