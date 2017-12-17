@@ -39,7 +39,9 @@ export default class AuthForm extends Component {
 
         <div className="login-social">
           <div>
-            <Icon.Facebook />
+            <a href="http://127.0.0.1:8081/api/login/facebook">
+              <Icon.Facebook />
+            </a>
           </div>
           <div>
             <a href="http://127.0.0.1:8081/api/login/twitter">
