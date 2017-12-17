@@ -9,6 +9,9 @@ import IndexScreen from './scenes/Index';
 // handlers
 import AuthRedirectHandler from './components/handlers/AuthRedirectHandler';
 
+// webpack offline plugin
+require('offline-plugin/runtime').install();
+
 ReactDOM.render(
   (
     <BrowserRouter>

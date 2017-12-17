@@ -1,0 +1,9 @@
+{
+  "name": "Chatter",
+  "short_name": "Chatter",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Chatter pet project",
+  "background_color": "#ffffff"
+}
