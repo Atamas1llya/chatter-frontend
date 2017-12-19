@@ -67,6 +67,8 @@
         align-items: center;
         justify-content: center;
 
+        color: var(--theme-accent);
+
         cursor: pointer;
 
         > svg {
@@ -77,7 +79,7 @@
 
         &:hover{
           > svg {
-            fill: var(--theme-white);
+            fill: var(--theme-accent);
             transform: rotateZ(15deg);
             transition: 0.2s;
           }
@@ -85,7 +87,7 @@
 
        &.active {
          > svg {
-           fill: var(--theme-white);
+           fill: var(--theme-accent);
            transition: 0.2s;
          }
        }

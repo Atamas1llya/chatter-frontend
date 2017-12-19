@@ -1,0 +1,64 @@
+@import "../../../../styles/smashy";
+
+#threads {
+  flex: 1;
+
+  background: var(--theme-black);
+  color: var(--theme-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  > .thread-item {
+    height: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    padding: 1vw 1.8vw;
+    font-size: 16px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--theme-passive);
+    }
+
+    > section {
+      flex: 1;
+
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+
+      span {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+
+        white-space: nowrap;
+
+        &:nth-child(1) {
+          flex: 3;
+        }
+
+        &:nth-child(2) {
+          flex: 1;
+          justify-content: flex-end;
+        }
+
+        &.thread-title {
+          font-size: 18px;
+        }
+      }
+    }
+
+
+  }
+}
