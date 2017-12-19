@@ -6,7 +6,6 @@ import * as storage from './actions/storage';
 import * as profile from './actions/profile';
 
 
-
 class UserStore {
   constructor() {
     if (this.token && !this.profile) {

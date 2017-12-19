@@ -10,4 +10,4 @@ export const handleLogout = function () {
 
   localStorage.removeItem('user_token');
   localStorage.removeItem('user_profile');
-}
+};
