@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import * as Icon from 'react-feather';
+import { observer } from 'mobx-react';
+
+import UserStore from '../../stores/UserStore';
 
 import './style.less';
 
+@observer
 export default class SideBar extends Component {
   state = {
     expanded: false,
@@ -43,6 +47,12 @@ export default class SideBar extends Component {
             </div>
             <div className="sidebar-bottom">
               <div
+                className="sidebar-icon"
+                onClick={UserStore.handleLogout}
+              >
+                <Icon.LogOut />
+              </div>
+              <div
                 className="sidebar-icon menu rotated"
                 onClick={this.toggle}
               >
@@ -58,9 +68,12 @@ export default class SideBar extends Component {
             <div className="sidebar-bottom">
               <span
                 className="sidebar-text"
+                onClick={UserStore.handleLogout}
+              > Log out </span>
+              <span
+                className="sidebar-text"
                 onClick={this.toggle}
-              >Toggle
-              </span>
+              > Toggle </span>
             </div>
           </div>
         </div>
