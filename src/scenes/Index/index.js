@@ -13,7 +13,7 @@ export default class Index extends Component {
           <meta name="theme-color" content="#353535" />
         </Helmet>
         <div id="index-page">
-          <span>Some nice animation here</span>
+          <span className="noselect">Some nice animation here</span>
         </div>
       </div>
     );
