@@ -15,6 +15,7 @@ import IndexScreen from './scenes/Index';
 // import 'normalize.css';
 import './styles';
 
+
 @observer
 export default class App extends Component {
   componentDidMount() {

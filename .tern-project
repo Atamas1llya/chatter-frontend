@@ -1,0 +1,9 @@
+{
+  "ecmaVersion": "7",
+  "libs": [],
+  "loadEagerly": [],
+  "dontLoad": [
+    "node_modules/**"
+  ],
+  "plugins": {}
+}
