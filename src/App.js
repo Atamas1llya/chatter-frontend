@@ -31,8 +31,8 @@ export default class App extends Component {
 
           <div id="app-container">
             <Switch>
-              <Route exact path="/" component={IndexScreen} />
-              <Route path="/chat" component={ChatScreen} />
+              <Route exact path="/home" component={IndexScreen} />
+              <Route exact path="/home/chat" component={ChatScreen} />
             </Switch>
           </div>
           { UiStore.loading && <Loading /> }

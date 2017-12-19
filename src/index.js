@@ -18,7 +18,7 @@ ReactDOM.render(
       <DevTools />
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={App} />
+          <Route path="/home" component={App} />
           <Route path="/login" component={LoginScreen} />
         </Switch>
       </BrowserRouter>
