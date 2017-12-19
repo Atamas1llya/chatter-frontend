@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { Redirect } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
+import * as Icon from 'react-feather';
+
 
 import UiStore from './stores/UiStore';
 import UserStore from './stores/UserStore';
@@ -27,12 +29,27 @@ export default class App extends Component {
     if (UserStore.token) {
       return (
         <div>
-          <SideBar />
+          <SideBar routes={[
+            {
+              to: '/home',
+              name: 'Home',
+              icon: <Icon.Home />,
+              params: {
+                exact: true,
+              },
+            },
+            {
+              to: '/home/threads',
+              name: 'Theads',
+              icon: <Icon.MessageCircle />,
+            },
+          ]}
+          />
 
           <div id="app-container">
             <Switch>
               <Route exact path="/home" component={IndexScreen} />
-              <Route exact path="/home/chat" component={ChatScreen} />
+              <Route exact path="/home/threads" component={ChatScreen} />
             </Switch>
           </div>
           { UiStore.loading && <Loading /> }

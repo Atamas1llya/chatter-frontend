@@ -23,27 +23,26 @@ export default class SideBar extends Component {
 
   render() {
     const { expanded } = this.state;
+    const { routes } = this.props; // configurable
 
     if (expanded) {
       return (
         <div id="sidebar">
           <div className="sidebar-icons">
             <div className="sidebar-top">
-              <NavLink
-                exact
-                to="/home"
-                className="sidebar-icon"
-                activeClassName="active"
-              >
-                <Icon.Home />
-              </NavLink>
-              <NavLink
-                to="/home/chat"
-                className="sidebar-icon"
-                activeClassName="active"
-              >
-                <Icon.MessageCircle />
-              </NavLink>
+              {
+                routes.map((route, index) => (
+                  <NavLink
+                    to={route.to}
+                    className="sidebar-icon"
+                    activeClassName="active"
+                    key={index}
+                    {...route.params}
+                  >
+                    { route.icon }
+                  </NavLink>
+                ))
+              }
             </div>
             <div className="sidebar-bottom">
               <div
@@ -62,18 +61,31 @@ export default class SideBar extends Component {
           </div>
           <div className="sidebar-icons text">
             <div className="sidebar-top">
-              <NavLink exact to="/home" className="sidebar-text">Home</NavLink>
-              <NavLink to="/home/chat" className="sidebar-text">Chat</NavLink>
+              {
+                routes.map((route, index) => (
+                  <NavLink
+                    to={route.to}
+                    className="sidebar-text"
+                    key={index}
+                    {...route.params}
+                  >{ route.name }
+                  </NavLink>
+                ))
+              }
+              {/* <NavLink exact to="/home" className="sidebar-text">Home</NavLink>
+              <NavLink to="/home/chat" className="sidebar-text">Chat</NavLink> */}
             </div>
             <div className="sidebar-bottom">
               <span
                 className="sidebar-text"
                 onClick={UserStore.handleLogout}
-              > Log out </span>
+              > Log out
+              </span>
               <span
                 className="sidebar-text"
                 onClick={this.toggle}
-              > Toggle </span>
+              > Toggle
+              </span>
             </div>
           </div>
         </div>
@@ -83,21 +95,19 @@ export default class SideBar extends Component {
         <div id="sidebar">
           <div className="sidebar-icons">
             <div className="sidebar-top">
-              <NavLink
-                exact
-                to="/home"
-                className="sidebar-icon"
-                activeClassName="active"
-              >
-                <Icon.Home />
-              </NavLink>
-              <NavLink
-                to="/home/chat"
-                className="sidebar-icon"
-                activeClassName="active"
-              >
-                <Icon.MessageCircle />
-              </NavLink>
+              {
+                routes.map((route, index) => (
+                  <NavLink
+                    to={route.to}
+                    className="sidebar-icon"
+                    activeClassName="active"
+                    key={index}
+                    {...route.params}
+                  >
+                    { route.icon }
+                  </NavLink>
+                ))
+              }
             </div>
             <div className="sidebar-bottom">
               <div
