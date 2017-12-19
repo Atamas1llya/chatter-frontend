@@ -62,7 +62,7 @@ export default class LoginScene extends Component {
       );
     } else {
       return (
-        <Redirect to="/" />
+        <Redirect to="/home" />
       );
     }
   }

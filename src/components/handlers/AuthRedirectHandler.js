@@ -31,7 +31,7 @@ export default class AuthRedirectHandler extends Component {
     const { status } = this.state;
 
     if (status === 'success') {
-      return <Redirect to="/" />;
+      return <Redirect to="/home" />;
     } else if (status === 'failure') {
       return <Redirect to="/login" />;
     } else {
