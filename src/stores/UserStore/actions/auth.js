@@ -1,7 +1,7 @@
 import api from '../../../utils/api';
 
 
-export const login = async function (credentials) {
+export const login = async function login(credentials) {
   const res = await api.post('/login', {
     ...credentials,
     mode: 'inline',
@@ -13,7 +13,7 @@ export const login = async function (credentials) {
 };
 
 
-export const register = async function (credentials) {
+export const register = async function register(credentials) {
   const res = await api.post('/register', {
     ...credentials,
     mode: 'inline',

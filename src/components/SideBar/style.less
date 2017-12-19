@@ -75,13 +75,20 @@
           transition: 0.2s;
         }
 
-        &:hover, &.active {
+        &:hover{
           > svg {
             fill: var(--theme-white);
             transform: rotateZ(15deg);
             transition: 0.2s;
           }
         }
+
+       &.active {
+         > svg {
+           fill: var(--theme-white);
+           transition: 0.2s;
+         }
+       }
 
         &.menu {
           cursor: pointer;

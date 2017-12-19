@@ -1,4 +1,4 @@
-export const storeCredentials = function (token, profile) {
+export const storeCredentials = function storeCredentials(token, profile) {
   if (token) {
     localStorage.setItem('user_token', token);
     this.token = token;

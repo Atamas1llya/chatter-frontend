@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
+import './style';
+
 export default class Index extends Component {
   render() {
-    console.log('123');
     return (
-      <div>Index</div>
+      <div id="index-page">
+        <span>Some nice animation here</span>
+      </div>
     );
   }
 }

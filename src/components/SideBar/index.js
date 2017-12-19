@@ -26,6 +26,14 @@ export default class SideBar extends Component {
           <div className="sidebar-icons">
             <div className="sidebar-top">
               <NavLink
+                exact
+                to="/"
+                className="sidebar-icon"
+                activeClassName="active"
+              >
+                <Icon.Home />
+              </NavLink>
+              <NavLink
                 to="/chat"
                 className="sidebar-icon"
                 activeClassName="active"
@@ -44,6 +52,7 @@ export default class SideBar extends Component {
           </div>
           <div className="sidebar-icons text">
             <div className="sidebar-top">
+              <NavLink exact to="/" className="sidebar-text">Home</NavLink>
               <NavLink to="/chat" className="sidebar-text">Chat</NavLink>
             </div>
             <div className="sidebar-bottom">
@@ -61,6 +70,14 @@ export default class SideBar extends Component {
         <div id="sidebar">
           <div className="sidebar-icons">
             <div className="sidebar-top">
+              <NavLink
+                exact
+                to="/"
+                className="sidebar-icon"
+                activeClassName="active"
+              >
+                <Icon.Home />
+              </NavLink>
               <NavLink
                 to="/chat"
                 className="sidebar-icon"

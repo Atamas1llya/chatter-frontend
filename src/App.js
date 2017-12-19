@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { Redirect } from 'react-router';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import UiStore from './stores/UiStore';
 import UserStore from './stores/UserStore';
@@ -11,6 +11,7 @@ import Loading from './components/Loading';
 
 // screens
 import IndexScreen from './scenes/Index';
+import ChatScreen from './scenes/Chat';
 
 // import 'normalize.css';
 import './styles';
@@ -29,7 +30,10 @@ export default class App extends Component {
           <SideBar />
 
           <div id="app-container">
-            <Route exact path="/" component={IndexScreen} />
+            <Switch>
+              <Route exact path="/" component={IndexScreen} />
+              <Route path="/chat" component={ChatScreen} />
+            </Switch>
           </div>
           { UiStore.loading && <Loading /> }
         </div>

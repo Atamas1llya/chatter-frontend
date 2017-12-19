@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 const generateRandomNumber = (min, max) => {
-  return Math.random() * (max - min) + min;
+  return (Math.random() * (max - min)) + min;
 };
 
 export default class Flake {
@@ -34,7 +34,7 @@ export default class Flake {
     if (this.direction === 'right') {
       this.flake.position.x -= this.xSpeed;
       this.flake.rotation.z -= this.rotSpeed;
-      this.oneDirectionMoves++;
+      this.oneDirectionMoves += 1;
       if (this.oneDirectionMoves > this.oneDirectionLimit) {
         this.oneDirectionMoves = 0;
         if (Math.random() >= 0.5) {
@@ -44,7 +44,7 @@ export default class Flake {
     } else {
       this.flake.position.x += this.xSpeed;
       this.flake.rotation.z += this.rotSpeed;
-      this.oneDirectionMoves++;
+      this.oneDirectionMoves += 1;
 
       if (this.oneDirectionMoves > this.oneDirectionLimit) {
         this.oneDirectionMoves = 0;

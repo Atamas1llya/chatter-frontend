@@ -1,10 +1,8 @@
-import api from '../../../utils/api';
-
-export const handleAuthRedirect = function (token) {
+export const handleAuthRedirect = function handleAuthRedirect(token) {
   return this.getProfile(token);
 };
 
-export const handleLogout = function () {
+export const handleLogout = function handleLogout() {
   this.token = null;
   this.profile = null;
 

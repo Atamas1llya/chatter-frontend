@@ -5,7 +5,6 @@ import DevTools from 'mobx-react-devtools';
 
 import App from './App';
 import LoginScreen from './scenes/Login';
-import IndexScreen from './scenes/Index';
 
 // handlers
 import AuthRedirectHandler from './components/handlers/AuthRedirectHandler';
@@ -19,7 +18,7 @@ ReactDOM.render(
       <DevTools />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={App} />
+          <Route path="/" component={App} />
           <Route path="/login" component={LoginScreen} />
         </Switch>
       </BrowserRouter>
