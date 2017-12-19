@@ -10,10 +10,19 @@ class Chat {
   }
 
   init = () => {
-    this.socket = io(apiHost, {
-      path: '/chat',
+    this.socket = io('http://127.0.0.1:8081', {
+      query: {
+        token: UserStore.token,
+      },
     });
-    console.log(this.socket);
+
+    this.socket.on('error', (message) => {
+      console.warn(message);
+    });
+
+    this.socket.on('connected', () => {
+      console.log('Connected!');
+    });
   }
 
   destroy = () => {
