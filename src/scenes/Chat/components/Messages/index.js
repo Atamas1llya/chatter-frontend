@@ -5,9 +5,7 @@ import './style';
 export default class Messages extends Component {
   render() {
     return (
-      <div id="messages">
-        
-      </div>
-    )
+      <div id="messages" />
+    );
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import './style';
@@ -18,6 +19,10 @@ export default class Chat extends Component {
   }
 
   render() {
+    if (this.props.match.isExact) {
+      return <Redirect exact to="/home/threads/select" />;
+    }
+
     return (
       <div>
         <Helmet>
@@ -27,7 +32,7 @@ export default class Chat extends Component {
         </Helmet>
 
         <div id="chat-container">
-          <Messages />
+          <Route path="/home/threads/:thread_id" component={Messages} />
           <Threads />
         </div>
 

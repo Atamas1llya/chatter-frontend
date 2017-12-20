@@ -19,7 +19,7 @@ ReactDOM.render(
       <DevTools />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={() => <Redirect to="/home" />}/>
+          <Route exact path="/" component={() => <Redirect to="/home" />} />
           <Route path="/home" component={App} />
           <Route path="/login" component={LoginScreen} />
         </Switch>
