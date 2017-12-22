@@ -36,7 +36,7 @@ export default class Messages extends Component {
         <div className="messages-list">
           {
             Chat.messages.map((message, index) => (
-              <div className={"message " + (message.own && "own")} key={index}>
+              <div className={`message ${message.own && 'own'}`} key={index}>
                 <section>
                   <span><b>{ message.from }</b></span>
                   <span>{ moment(message.timestamp).format('HH:mm') }</span>

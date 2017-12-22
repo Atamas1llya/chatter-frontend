@@ -24,7 +24,7 @@ class Chat {
 
     this.socket.on('new_message', (message) => {
       this.messages.push(message);
-    })
+    });
   }
 
   destroy = () => {
@@ -36,7 +36,7 @@ class Chat {
     this.messages.push({
       from: UserStore.profile.local.email,
       own: true,
-      message: message,
+      message,
       timestamp: Date.now(),
     });
     this.socket.emit('new_message', message);
