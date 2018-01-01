@@ -34,7 +34,7 @@ class Chat {
 
   sendMessage = (message) => {
     this.messages.push({
-      from: UserStore.profile.local.email,
+      from: UserStore.profile.global.username,
       own: true,
       message,
       timestamp: Date.now(),

@@ -9,10 +9,6 @@ import LoginScreen from './scenes/Login';
 // handlers
 import AuthRedirectHandler from './components/handlers/AuthRedirectHandler';
 
-
-// webpack offline plugin
-// require('offline-plugin/runtime').install();
-
 ReactDOM.render(
   (
     <div>
@@ -28,3 +24,10 @@ ReactDOM.render(
   ),
   document.getElementById('root'),
 );
+
+
+// webpack offline plugin
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'production') {
+  require('offline-plugin/runtime').install();
+}
