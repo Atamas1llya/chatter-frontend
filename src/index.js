@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import DevTools from 'mobx-react-devtools';
+// import DevTools from 'mobx-react-devtools';
 
 import App from './App';
 import LoginScreen from './scenes/Login';
@@ -12,7 +12,7 @@ import AuthRedirectHandler from './components/handlers/AuthRedirectHandler';
 ReactDOM.render(
   (
     <div>
-      <DevTools />
+      {/* <DevTools /> */}
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={() => <Redirect to="/home" />} />
@@ -25,9 +25,16 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 
+// install service worker
 
-// webpack offline plugin
-console.log(process.env.NODE_ENV);
-if (process.env.NODE_ENV === 'production') {
-  require('offline-plugin/runtime').install();
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/service-worker.js')
+    .then((err) => {
+      console.log('Service Worker Registered');
+    })
+    .catch((err) => {
+      console.warn('Failed to register service-worker!');
+      console.error(err);
+    })
 }

@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -10,10 +11,32 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323"> -->
 
     <title>Chatter</title>
+
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #preload-page {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: monospace;
+
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    </style>
   </head>
   <body>
     <div id="root">
-
+      <div id="preload-page">
+        <span>CHATTER</span>
+      </div>
     </div>
     <script src="/bundle.js" charset="utf-8"></script>
   </body>

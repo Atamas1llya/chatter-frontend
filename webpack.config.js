@@ -35,9 +35,9 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
     }),
-    new OfflinePlugin(),
+    // new OfflinePlugin(),
     new PrerenderSpaPlugin(
-      path.join(__dirname, '../dist'),
+      path.join(__dirname, './dist'),
       ['/', '/login'],
     ),
   );
