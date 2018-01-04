@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/pushstate-server ./dist 8080",
+    "start": "node_modules/.bin/pushstate-server ./dist 8082",
     "watch": "node_modules/.bin/webpack --watch --colors --progress",
     "build": "NODE_ENV=production node_modules/.bin/webpack -p --progress",
     "lint": "node_modules/.bin/eslint ."
