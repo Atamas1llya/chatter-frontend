@@ -7,6 +7,7 @@ import LoginForm from './components/Login';
 import RegisterForm from './components/Register';
 
 import UiStore from '../../../../stores/UiStore';
+import { apiHost } from '../../../../config';
 
 import './styles.less';
 
@@ -40,15 +41,15 @@ export default class AuthForm extends Component {
         { Form }
 
         <div className="login-social">
-          <a href="http://127.0.0.1:8081/api/login/google">
+          <a href={`${apiHost}/login/google`}>
             <Icon.PlusCircle />
           </a>
 
-          <a href="http://127.0.0.1:8081/api/login/twitter">
+          <a href={`${apiHost}/login/twitter`}>
             <Icon.Twitter />
           </a>
 
-          <a href="http://127.0.0.1:8081/api/login/facebook">
+          <a href={`${apiHost}/login/facebook`}>
             <Icon.Facebook />
           </a>
         </div>
