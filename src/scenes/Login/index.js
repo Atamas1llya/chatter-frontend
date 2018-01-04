@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import { observe } from 'mobx';
 
 import AuthForm from './components/AuthForm';
-import Snowfall from '../../animations/Snowfall';
+// import Snowfall from '../../animations/Snowfall';
 
 import UserStore from '../../stores/UserStore';
 import UiStore from '../../stores/UiStore';
@@ -18,17 +18,17 @@ import './style.less';
 @observer
 export default class LoginScene extends Component {
   componentDidMount() {
-    this.snowfall = new Snowfall('#snowfall-container', UiStore.colorScheme.background);
-    this.disposer = observe(UiStore, (change) => {
-      this.snowfall.changeFlakesColor(UiStore.colorScheme.background);
-    });
+    // this.snowfall = new Snowfall('#snowfall-container', UiStore.colorScheme.background);
+    // this.disposer = observe(UiStore, (change) => {
+    //   this.snowfall.changeFlakesColor(UiStore.colorScheme.background);
+    // });
   }
 
   componentWillUnmount() {
-    this.snowfall.destroy();
-    delete this.snowfall;
+    // this.snowfall.destroy();
+    // delete this.snowfall;
 
-    this.disposer();
+    // this.disposer();
   }
 
   onLocalLogin = async (e) => {
