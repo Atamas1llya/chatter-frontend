@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const OfflinePlugin = require('offline-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
