@@ -8,7 +8,7 @@ class Chat {
   @observable messages = [];
 
   init = () => {
-    this.socket = io('http://127.0.0.1:8081', {
+    this.socket = io(apiHost, {
       query: {
         token: UserStore.token,
       },
